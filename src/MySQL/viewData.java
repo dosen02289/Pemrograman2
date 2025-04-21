@@ -1,0 +1,57 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package MySQL;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+/**
+ *
+ * @author RINUSANTORO
+ */
+public class viewData {
+           public static Connection con;
+    public static Statement stm;
+    public static ResultSet rs;
+    public static void main(String args[]){
+        try {
+          
+            String url ="jdbc:mysql://localhost/mhs";
+            String user="root";
+            String pass="";
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url,user,pass);
+            stm = con.createStatement();
+          
+             // buat query ke database
+            String sql = "SELECT * FROM datamhs";
+            
+            // eksekusi query dan simpan hasilnya di obj ResultSet
+            rs = stm.executeQuery(sql);
+            
+            // tampilkan hasil query
+            while(rs.next()){
+                System.out.println("NIM: " + rs.getInt("nim"));
+                System.out.println("Nama: " + rs.getString("nama"));
+                System.out.println("Semester: " + rs.getInt("semester"));
+                System.out.println("Kelas: " + rs.getString("kelas"));
+            }
+            
+            stm.close();
+            con.close();
+            
+            
+        
+        }   
+        
+        catch (ClassNotFoundException | SQLException e) {
+            //e.printStackTrace();
+            System.err.println("koneksi gagal" +e.getMessage());
+        }
+    }
+}
