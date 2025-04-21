@@ -28,7 +28,22 @@ public class viewData {
             con = DriverManager.getConnection(url,user,pass);
             stm = con.createStatement();
           
-             // buat query ke database
+            
+            // INSERT a record
+            String sqlInsert = "insert into datamhs values ('02290', 'Rinusantoro', '2', 'B')";
+            System.out.println("The SQL statement is: " + sqlInsert + "\n");  // Echo for debugging
+            int countInserted;
+            countInserted = stm.executeUpdate(sqlInsert);
+            System.out.println(countInserted + " records inserted.\n");
+         
+             // Update a record 
+            String strUpdate;
+            strUpdate = "update datamhs set nama = 'Sonasa', kelas = 'Reg B' where nim = '02289'";
+            System.out.println("The SQL statement is: " + strUpdate + "\n");  // Echo for debugging
+            int countUpdated = stm.executeUpdate(strUpdate);
+            System.out.println(countUpdated + " records affected.\n");
+            
+            // buat query ke database
             String sql = "SELECT * FROM datamhs";
             
             // eksekusi query dan simpan hasilnya di obj ResultSet
