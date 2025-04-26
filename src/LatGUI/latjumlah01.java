@@ -162,10 +162,22 @@ public class latjumlah01 extends javax.swing.JFrame {
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
+        int n1,n2,hs;
+        n1=Integer.parseInt(nil1.getText());
+        n2=Integer.parseInt(nil2.getText());
+        hs=n1-n2;
+        jml.setText(" " + hs);
+
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         // TODO add your handling code here:
+        int n1,n2,hs;
+        n1=Integer.parseInt(nil1.getText());
+        n2=Integer.parseInt(nil2.getText());
+        hs=n1*n2;
+        jml.setText(" " + hs);
+
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed

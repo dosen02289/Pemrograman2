@@ -30,7 +30,7 @@ public class viewData {
           
             
             // INSERT a record
-            String sqlInsert = "insert into datamhs values ('02290', 'Rinusantoro', '2', 'B')";
+            String sqlInsert = "insert into datamhs values ('02291', 'Unpam', '3', 'C')";
             System.out.println("The SQL statement is: " + sqlInsert + "\n");  // Echo for debugging
             int countInserted;
             countInserted = stm.executeUpdate(sqlInsert);
